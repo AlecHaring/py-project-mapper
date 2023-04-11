@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "py-project-mapper"
+version = "0.1.0"
+description = "A command-line tool to analyze and display the structure of Python projects."
+authors = ["Alec Haring <alecsharing@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "py_project_mapper"}]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+py-project-mapper = "py_project_mapper.mapper:main"
