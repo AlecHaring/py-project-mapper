@@ -6,10 +6,16 @@ from models import FileData, MethodData, ClassData
 
 
 def walk_python_files(path: str) -> List[str]:
+    """
+    Walks through the given path and returns a list of all python file paths.
+    """
     return [os.path.join(root, file) for root, dirs, files in os.walk(path) for file in files if file.endswith(".py")]
 
 
 def parse_python_file(file_path: str) -> FileData:
+    """
+    Parses the given python file and returns a FileData object.
+    """
     with open(file_path, 'r') as file:
         content = file.read()
         tree = ast.parse(content)
@@ -23,6 +29,9 @@ def parse_python_file(file_path: str) -> FileData:
 
 
 def print_python_structure(file_data: FileData) -> None:
+    """
+    Formats and prints the given FileData object.
+    """
     print(f"File: {file_data.path}")
     print(" Variables:")
     for variable in file_data.variables:
