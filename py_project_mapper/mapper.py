@@ -1,6 +1,7 @@
 import argparse
 
-from py_project_mapper.utils import walk_python_files, parse_python_file, print_python_structure
+from py_project_mapper.models import PythonFile
+from py_project_mapper.utils import walk_python_files
 
 
 def main():
@@ -9,9 +10,8 @@ def main():
     args = parser.parse_args()
 
     for file_path in walk_python_files(args.project_path):
-        file_data = parse_python_file(file_path)
-        print_python_structure(file_data)
-        print("\n")
+        file = PythonFile(file_path)
+        print(file.formatted())
 
 
 if __name__ == "__main__":
