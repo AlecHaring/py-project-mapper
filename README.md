@@ -9,6 +9,8 @@ py-project-mapper is a command-line tool that analyzes and displays the structur
   - Variables
   - Functions and their signatures
   - Classes, their base classes, and their methods
+- **Optional clipboard support** – add `-c / --copy` to copy the formatted output directly to your clipboard  
+
 
 ## Installation
 
@@ -22,6 +24,8 @@ pip install git+https://github.com/AlecHaring/py-project-mapper.git
 To analyze a Python project and display its structure, run the following command:
 ```bash
 py-project-mapper -p /path/to/project/directory
+
+py-project-mapper -p /path/to/project/directory -c   # analyze and copy the result to clipboard
 ```
 
 Replace `/path/to/project/directory` with the path to the Python project you want to analyze.
